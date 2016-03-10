@@ -33,12 +33,7 @@ if(inIframe())
 $(".quote-text").animate({
     opacity: 0
   }, 500,
-  function() {
-    $(this).animate({
-      opacity: 1
-    }, 500);
-    $('#text').text(r.quote);
-  });
+
 
   $(".quote-author").animate({
       opacity: 0
