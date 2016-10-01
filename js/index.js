@@ -8,6 +8,7 @@ function inIframe () { try { return window.self !== window.top; } catch (e) { re
 
 var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857", "#D91F0B", "#4F0BD9"];
 var currentQuote = '', currentAuthor = '';
+var appURL = 'http://codepen.io/camperAvengedEndie/full/LNRWpW/';
 function openURL(url){
   window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=0 ,location=0 ,statusbar=0,menubar=0, resizable=0');
 }
@@ -16,7 +17,7 @@ function getQuote() {
     headers: {
       "X-Mashape-Key": "OivH71yd3tmshl9YKzFH7BTzBVRQp1RaKLajsnafgL2aPsfP9V",
       Accept: "application/json",
-      
+
     },
     url: 'https://andruxnet-random-famous-quotes.p.mashape.com/cat=',
     success: function(response) {
@@ -73,6 +74,16 @@ $(".quote-text").animate({
         $('#tumblr-quote').on('click', function() {
           if(!inIframe()) {
             openURL('https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+encodeURIComponent(currentAuthor)+'&content=' + encodeURIComponent(currentQuote));
+          }
+        });
+        $('#googleplus-quote').on('click', function() {
+          if(!inIframe()) {
+            openURL('https://plus.google.com/share?url=' + encodeURIComponent( appURL ));
+          }
+        });
+        $('#facebook-quote').on('click', function() {
+          if(!inIframe()) {
+            openURL('https://www.facebook.com/sharer/sharer.php?display=popup&u=' + encodeURIComponent( appURL ));
           }
         });
       });
