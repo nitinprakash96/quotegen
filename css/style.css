@@ -48,6 +48,7 @@ body {
   clear: both;
   font-weight: 500;
   font-size: 1.75em;
+  opacity: 0;
 }
 .quote-box .quote-text i {
   font-size: 1.0em;
@@ -60,6 +61,7 @@ body {
   padding-top: 20px;
   font-size: 1em;
   text-align: right;
+  opacity: 0;
 }
 .quote-box .buttons {
   width: 450px;
