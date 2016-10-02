@@ -97,3 +97,8 @@ body {
 .quote-box .buttons .button#new-quote {
   float: right;
 }
+
+#image-quote {
+  float:right;
+  margin-right:2px;
+}
