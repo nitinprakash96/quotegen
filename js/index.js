@@ -3,6 +3,23 @@ Author: Nitin Prakash
 Email ID: prakash.nitin63@gmail.com
 Github: www.github.com/nitinprakash96
 */
+var request = "https://pixabay.com/api/?key=3428102-aa3f9cc2fce6e2aa8098753ce&q=quote&per_page=3"
+var counter = 0;
+
+function getImageQuote() {
+  console.log("called");
+  $.ajax({
+    url: request,
+    success: displayImageQuote
+  })
+}
+
+function displayImageQuote(data){
+  console.log("success");
+  var image = data.hits[counter].webformatURL
+  counter++;
+  window.open(image,'_blank'); 
+}
 
 function inIframe () { try { return window.self !== window.top; } catch (e) { return true; } }
 
@@ -66,6 +83,9 @@ $(".quote-text").animate({
       $(document).ready(function() {
         getQuote();
         $('#new-quote').on('click', getQuote);
+        $('#image-quote').on('click', function(){
+          getImageQuote();
+        });
         $('#tweet-quote').on('click', function() {
           if(!inIframe()) {
             openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
@@ -87,3 +107,4 @@ $(".quote-text").animate({
           }
         });
       });
+
