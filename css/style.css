@@ -84,7 +84,7 @@ body {
 .quote-box .buttons .button:hover {
   opacity: 0.9;
 }
-.quote-box .buttons .button#tweet-quote, .quote-box .buttons .button#tumblr-quote, .quote-box .buttons .button#googleplus-quote, .quote-box .buttons .button#facebook-quote {
+.quote-box .buttons .button#tweet-quote, .quote-box .buttons .button#tumblr-quote, .quote-box .buttons .button#google-plus-quote, .quote-box .buttons .button#facebook-quote {
   float: left;
   padding: 0px;
   padding-top: 8px;
@@ -96,4 +96,9 @@ body {
 }
 .quote-box .buttons .button#new-quote {
   float: right;
+}
+
+#image-quote {
+  float:right;
+  margin-right:2px;
 }
